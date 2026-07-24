@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<hea
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐迪AI工作助手</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:#0f172a;
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .box{
+            text-align:center;
+        }
+
+        h1{
+            font-size:48px;
+            margin-bottom:20px;
+        }
+
+        input{
+            width:320px;
+            padding:15px;
+            border-radius:10px;
+            border:none;
+            font-size:16px;
+        }
+
+        button{
+            margin-top:20px;
+            padding:15px 35px;
+            border:none;
+            border-radius:10px;
+            background:#2563eb;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>乐迪AI工作助手</h1>
+
+<input id="userInput" placeholder  ="请输入你的需求">
+
+<br>
+
+<button  onclick="startAI()">开始执行</button>
+<p id="result"></p> 
+</div>
+</body><script>
+
+function startAI(){
+
+let text = document.getElementById("userInput").value;
+
+document.getElementById("result").innerHTML =
+"正在分析你的需求...<br><br>你的需求：" + text;
+
+}
+
+</script>
+</html>
+
