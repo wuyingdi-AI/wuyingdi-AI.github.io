@@ -1,80 +1,114 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<hea
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>乐迪AI工作助手</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-            margin:0;
-            font-family:Arial,sans-serif;
-            background:#0f172a;
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-        }
+<title>吴英迪AI工具助手</title>
 
-        .box{
-            text-align:center;
-        }
+<style>
 
-        h1{
-            font-size:48px;
-            margin-bottom:20px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        input{
-            width:320px;
-            padding:15px;
-            border-radius:10px;
-            border:none;
-            font-size:16px;
-        }
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-        button{
-            margin-top:20px;
-            padding:15px 35px;
-            border:none;
-            border-radius:10px;
-            background:#2563eb;
-            color:white;
-            font-size:18px;
-            cursor:pointer;
-        }
+.box{
+    width:420px;
+    text-align:center;
+}
 
-        button:hover{
-            background:#1d4ed8;
-        }
-    </style>
+h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+p{
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <div class="box">
 
-<h1>乐迪AI工作助手</h1>
+<h1>🤖 AI工具助手</h1>
 
-<input id="userInput" placeholder  ="请输入你的需求">
+<p>欢迎来到吴英迪AI平台</p>
 
-<br>
+<input
+id="question"
+placeholder="请输入你的问题">
 
-<button  onclick="startAI()">开始执行</button>
-<p id="result"></p> 
+<button onclick="startChat()">
+开始聊天
+</button>
+
 </div>
-</body><script>
 
-function startAI(){
+<script>
 
-let text = document.getElementById("userInput").value;
+function startChat(){
 
-document.getElementById("result").innerHTML =
-"正在分析你的需求...<br><br>你的需求：" + text;
+let text=document.getElementById("question").value;
+
+if(text==""){
+
+alert("请输入问题");
+
+return;
+
+}
+
+window.open(
+"https://chat.openai.com/?q="+encodeURIComponent(text),
+"_blank"
+);
 
 }
 
 </script>
-</html>
 
+</body>
+
+</html>
